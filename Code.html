@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeSensei | Enterprise AI</title>
+    <link rel="stylesheet" href="Code.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo"> 🥷CodeSensei </div>
+    </header>
+
+    <main class="container">
+        
+        <section class="split-view">
+            <div class="panel left-panel">
+                <div class="panel-header">Source Code</div>
+                <textarea id="codeInput" placeholder="Enter source code for analysis..."></textarea>
+                <div class="action-bar">
+                    <button id="analyzeBtn" class="primary-btn">Run Analysis</button>
+                    <span id="loadingMsg" class="loading-text hidden">Processing logic...</span>
+                </div>
+            </div>
+
+            <div class="panel right-panel">
+                <div class="panel-header">
+                    Errors
+                    <span id="detectedLangBadge" class="badge hidden" style="background-color: #dcfce7; color: #166534; border-color: #bbf7d0;">Language: ?</span>
+                </div>
+                <div id="analysisOutput" class="analysis-content">
+                    <div class="empty-state">Awaiting code input to generate diagnostics.</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="generate-section hidden" id="generateSection">
+            <button id="generateBtn" class="success-btn">Improve your code</button>
+        </div>
+
+        <section id="solutionSection" class="solution-panel hidden">
+            <div class="panel-header">
+                Optimized Source Code
+                <button id="copyBtn" class="secondary-btn">Copy to Clipboard</button>
+            </div>
+            <textarea id="codeOutput" readonly></textarea>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-title">Algorithm Complexity</div>
+                    <div id="complexityDisplay" class="metric-value">N/A</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-title">Suggested Git Commit</div>
+                    <code id="commitMessage" class="metric-value code-text">N/A</code>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="Code.js"></script>
+</body>
+</html>
